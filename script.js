@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showError(phone, error, 'Phone number is required');
             return false;
         } else if (!phoneRegex.test(phone.value.trim())) {
-            showError(phone, error, 'Please enter a valid phone number');
+            showError(phone, error, 'Please enter a valid phone number e.g. +1234567890');
             return false;
         } else {
             showSuccess(phone, error);
