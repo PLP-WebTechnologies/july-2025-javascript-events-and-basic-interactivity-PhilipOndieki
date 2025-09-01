@@ -1,0 +1,637 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #e5e5e5;
+    background-color: #0a0f1c;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Styles */
+header {
+    background: transparent;
+    color: #ffffff;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(102, 255, 204, 0.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: #66ffcc;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* Dark Mode Toggle */
+.toggle-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(102, 255, 204, 0.1);
+    color: #66ffcc;
+    border: 1px solid rgba(102, 255, 204, 0.2);
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.toggle-btn:hover {
+    background: rgba(102, 255, 204, 0.15);
+    border-color: rgba(102, 255, 204, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Section Styles */
+.section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+.section h2 {
+    color: #66ffcc;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(102, 255, 204, 0.2);
+}
+
+.section h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+/* Feature Cards */
+.feature-card {
+    background: rgba(102, 255, 204, 0.05);
+    border: 1px solid rgba(102, 255, 204, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+    background: rgba(102, 255, 204, 0.08);
+    border-color: rgba(102, 255, 204, 0.2);
+}
+
+.feature-card h3 {
+    color: #66ffcc;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+}
+
+/* Button Styles */
+.btn {
+    background: #66ffcc;
+    color: #0a0f1c;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin: 0.25rem;
+}
+
+.btn:hover {
+    background: #52e6b8;
+    transform: translateY(-1px);
+}
+
+.btn.secondary {
+    background: rgba(102, 255, 204, 0.1);
+    color: #66ffcc;
+    border: 1px solid rgba(102, 255, 204, 0.3);
+}
+
+.btn.secondary:hover {
+    background: rgba(102, 255, 204, 0.2);
+}
+
+.btn.danger {
+    background: rgba(255, 107, 107, 0.9);
+    color: white;
+}
+
+.btn.danger:hover {
+    background: rgba(255, 107, 107, 1);
+}
+
+/* Counter Display */
+#counterDisplay {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #66ffcc;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* FAQ Styles */
+.faq-item {
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border: none;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.faq-question:hover {
+    background: rgba(102, 255, 204, 0.05);
+}
+
+.faq-question.active {
+    background: rgba(102, 255, 204, 0.1);
+    color: #66ffcc;
+}
+
+.faq-answer {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: #b0b0b0;
+}
+
+.faq-answer.active {
+    padding: 1rem 1.5rem;
+    max-height: 200px;
+}
+
+.faq-icon {
+    color: #66ffcc;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* Tab Styles */
+.tab-container {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #a0a0a0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    color: #66ffcc;
+}
+
+.tab-btn.active {
+    color: #66ffcc;
+    border-bottom-color: #66ffcc;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.tab-panel h4 {
+    color: #66ffcc;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    color: #e5e5e5;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.875rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #e5e5e5;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #66ffcc;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(102, 255, 204, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #666;
+}
+
+.form-group input.error {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.05);
+}
+
+.form-group input.valid {
+    border-color: #66ffcc;
+    background: rgba(102, 255, 204, 0.05);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: #66ffcc;
+}
+
+/* Messages */
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.success-message {
+    background: rgba(102, 255, 204, 0.1);
+    color: #66ffcc;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid rgba(102, 255, 204, 0.2);
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.password-requirements small {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Messages Section */
+.message-container {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 120px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.message-item {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    border-left: 3px solid #66ffcc;
+    font-size: 0.95rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.message-item:last-child {
+    margin-bottom: 0;
+}
+
+.welcome-message {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    border: none;
+    background: transparent;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #ffffff;
+    color: #2d3748;
+}
+
+.light-mode header {
+    border-bottom-color: rgba(0, 150, 136, 0.1);
+}
+
+.light-mode header h1 {
+    color: #00968a;
+}
+
+.light-mode .subtitle {
+    color: #666;
+}
+
+.light-mode .toggle-btn {
+    background: rgba(0, 150, 136, 0.1);
+    color: #00968a;
+    border-color: rgba(0, 150, 136, 0.2);
+}
+
+.light-mode .toggle-btn:hover {
+    background: rgba(0, 150, 136, 0.15);
+}
+
+.light-mode .section {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.05);
+    color: #2d3748;
+}
+
+.light-mode .section h2 {
+    color: #00968a;
+    border-bottom-color: rgba(0, 150, 136, 0.2);
+}
+
+.light-mode .section h3 {
+    color: #2d3748;
+}
+
+.light-mode .section p {
+    color: #4a5568;
+}
+
+.light-mode .feature-card {
+    background: rgba(0, 150, 136, 0.05);
+    border-color: rgba(0, 150, 136, 0.1);
+}
+
+.light-mode .feature-card:hover {
+    background: rgba(0, 150, 136, 0.08);
+    border-color: rgba(0, 150, 136, 0.2);
+}
+
+.light-mode .feature-card h3 {
+    color: #00968a;
+}
+
+.light-mode .feature-card p {
+    color: #4a5568;
+}
+
+.light-mode .btn {
+    background: #00968a;
+    color: white;
+}
+
+.light-mode .btn:hover {
+    background: #00796b;
+}
+
+.light-mode .btn.secondary {
+    background: rgba(0, 150, 136, 0.1);
+    color: #00968a;
+    border-color: rgba(0, 150, 136, 0.3);
+}
+
+.light-mode #counterDisplay {
+    color: #00968a;
+}
+
+/* Light Mode FAQ Styles */
+.light-mode .faq-question {
+    background: rgba(0, 0, 0, 0.03);
+    color: #2d3748;
+}
+
+.light-mode .faq-question:hover {
+    background: rgba(0, 150, 136, 0.05);
+    color: #2d3748;
+}
+
+.light-mode .faq-question.active {
+    background: rgba(0, 150, 136, 0.1);
+    color: #00968a;
+}
+
+.light-mode .faq-answer {
+    background: rgba(0, 0, 0, 0.02);
+    color: #4a5568;
+}
+
+.light-mode .faq-answer.active {
+    background: rgba(0, 0, 0, 0.02);
+    color: #4a5568;
+}
+
+.light-mode .faq-icon {
+    color: #00968a;
+}
+
+/* Light Mode Tab Styles */
+.light-mode .tab-container {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .tab-btn {
+    color: #718096;
+}
+
+.light-mode .tab-btn:hover {
+    color: #00968a;
+    background: rgba(0, 150, 136, 0.05);
+}
+
+.light-mode .tab-btn.active {
+    color: #00968a;
+    background: rgba(0, 150, 136, 0.05);
+}
+
+.light-mode .tab-panel {
+    color: #2d3748;
+}
+
+.light-mode .tab-panel h4 {
+    color: #00968a;
+}
+
+.light-mode .tab-panel p {
+    color: #4a5568;
+}
+
+/* Light Mode Form Styles */
+.light-mode .form-container {
+    color: #2d3748;
+}
+
+.light-mode .form-group {
+    color: #2d3748;
+}
+
+.light-mode .form-group label {
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.light-mode .form-group input {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #2d3748;
+}
+
+.light-mode .form-group input:focus {
+    border-color: #00968a;
+    background: rgba(0, 150, 136, 0.03);
+    box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.1);
+}
+
+.light-mode .form-group input::placeholder {
+    color: #a0aec0;
+}
+
+.light-mode .password-requirements small {
+    color: #718096;
+}
+
+.light-mode .checkbox-group {
+    color: #2d3748;
+}
+
+.light-mode .success-message {
+    background: rgba(0, 150, 136, 0.1);
+    color: #00695c;
+    border-color: rgba(0, 150, 136, 0.2);
+}
+
+/* Light Mode Message Styles */
+.light-mode .message-container {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .message-item {
+    background: rgba(255, 255, 255, 0.8);
+    color: #2d3748;
+    border-left-color: #00968a;
+}
+
+.light-mode .welcome-message {
+    color: #718096;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header {
+        padding: 2rem 0;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .toggle-btn {
+        position: static;
+        margin-top: 1rem;
+    }
+    
+    .section {
+        padding: 1.5rem;
+    }
+    
+    .tab-container {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}

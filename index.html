@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page - JavaScript Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Dark Mode Toggle -->
+        <header>
+            <h1>Interactive Web Experience</h1>
+            <button id="darkModeToggle" class="toggle-btn">🌙 Dark Mode</button>
+        </header>
+
+        <!-- Part 1: Interactive Elements Section -->
+        <section class="interactive-section">
+            <h2>Interactive Elements</h2>
+            
+            <!-- Counter Game -->
+            <div class="feature-card">
+                <h3>Click Counter Game</h3>
+                <p>Current Count: <span id="counterDisplay">0</span></p>
+                <button id="incrementBtn" class="btn">+1</button>
+                <button id="decrementBtn" class="btn">-1</button>
+                <button id="resetBtn" class="btn reset">Reset</button>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="feature-card">
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq1">
+                        What is JavaScript? <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq1" class="faq-answer">
+                        <p>JavaScript is a versatile programming language that adds interactivity to web pages.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq2">
+                        How do event listeners work? <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq2" class="faq-answer">
+                        <p>Event listeners "listen" for specific user actions and execute code when those actions occur.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq3">
+                        What is DOM manipulation? <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq3" class="faq-answer">
+                        <p>DOM manipulation allows you to dynamically change HTML content and styles using JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabbed Interface -->
+            <div class="feature-card">
+                <h3>Content Tabs</h3>
+                <div class="tab-container">
+                    <button class="tab-btn active" data-tab="tab1">HTML</button>
+                    <button class="tab-btn" data-tab="tab2">CSS</button>
+                    <button class="tab-btn" data-tab="tab3">JavaScript</button>
+                </div>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-panel active">
+                        <h4>HTML - Structure</h4>
+                        <p>HTML provides the basic structure and content of web pages using elements and tags.</p>
+                    </div>
+                    <div id="tab2" class="tab-panel">
+                        <h4>CSS - Styling</h4>
+                        <p>CSS controls the visual presentation, layout, and design of web pages.</p>
+                    </div>
+                    <div id="tab3" class="tab-panel">
+                        <h4>JavaScript - Interactivity</h4>
+                        <p>JavaScript adds dynamic behavior and interactivity to web pages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Form Validation Section -->
+        <section class="form-section">
+            <h2>User Registration Form</h2>
+            <form id="registrationForm" class="registration-form">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error-message" id="firstNameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <span class="error-message" id="lastNameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-message" id="passwordError"></span>
+                    <div class="password-requirements">
+                        <small>Password must be at least 8 characters long and contain uppercase, lowercase, number, and special character.</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="13" max="120" required>
+                    <span class="error-message" id="ageError"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                    <span class="error-message" id="termsError"></span>
+                </div>
+
+                <button type="submit" class="btn submit-btn">Register</button>
+            </form>
+
+            <div id="successMessage" class="success-message" style="display: none;">
+                <h3>Registration Successful!</h3>
+                <p>Thank you for registering. Your account has been created successfully.</p>
+            </div>
+        </section>
+
+        <!-- Interactive Messages Area -->
+        <section class="messages-section">
+            <h3>Activity Log</h3>
+            <div id="messageContainer" class="message-container">
+                <p class="welcome-message">Welcome! Try interacting with the elements above to see messages appear here.</p>
+            </div>
+            <button id="clearMessages" class="btn clear-btn">Clear Messages</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
